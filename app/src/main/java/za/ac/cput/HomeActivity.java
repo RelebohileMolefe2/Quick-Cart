@@ -28,12 +28,12 @@ public class HomeActivity extends AppCompatActivity {
 
         // Set click listeners for each category
         setCategoryClick(R.id.beautyCategory, "Beauty");
-        setCategoryClick(R.id.cartCategory, "Cart");
+        setCategoryClick(R.id.cartBottom, "Cart");
         setCategoryClick(R.id.groceriesCategory, "Groceries");
-        setCategoryClick(R.id.homeCategory, "Home");
+        setCategoryClick(R.id.homeBottom, "Home");
         setCategoryClick(R.id.householdCategory, "Household");
-        setCategoryClick(R.id.ordersCategory, "Orders");
-        setCategoryClick(R.id.profileCategory, "Profile");
+        setCategoryClick(R.id.ordersBottom, "Orders");
+        setCategoryClick(R.id.profileBottom, "Profile");
         setCategoryClick(R.id.snacksCategory, "Snacks");
     }
 
@@ -41,13 +41,14 @@ public class HomeActivity extends AppCompatActivity {
         ImageView category = findViewById(viewId);
         if (category != null) {
             category.setOnClickListener(v -> {
-                // For now, just show a toast message
-                Toast.makeText(this, categoryName + " clicked", Toast.LENGTH_SHORT).show();
-
-                // Example: If you want to open another activity for Beauty
-                // if (categoryName.equals("Beauty")) {
-                //     startActivity(new Intent(this, BeautyActivity.class));
-                // }
+                if (categoryName.equals("Orders")) {
+                    // Navigate to OrdersActivity
+                    Intent intent = new Intent(HomeActivity.this, OrdersActivity.class);
+                    startActivity(intent);
+                } else {
+                    // Show toast for other categories
+                    Toast.makeText(HomeActivity.this, categoryName + " clicked", Toast.LENGTH_SHORT).show();
+                }
             });
         }
     }
