@@ -14,3 +14,11 @@
     <style name="Theme.GroceryApp" parent="Base.Theme.GroceryApp" />
 
 </resources>
+    <!--
+        <TextView
+            android:id="@+id/sampleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!" />
+    -->
+
