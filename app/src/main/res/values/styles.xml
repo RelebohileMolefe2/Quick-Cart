@@ -8,6 +8,13 @@
         <item name="android:layout_margin">8dp</item>
         <item name="android:layout_columnWeight">1</item>
     </style>
+    <!--
+        <TextView
+            android:id="@+id/sampleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!" />
+    -->
 
 
     <style name="CategoryContent">
