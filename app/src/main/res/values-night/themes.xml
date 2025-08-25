@@ -3,5 +3,11 @@
     <style name="Base.Theme.GroceryApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/accent_pink</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/card_soft_pink</item>
+        <item name="android:colorBackground">@color/soft_background</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+
     </style>
 </resources>

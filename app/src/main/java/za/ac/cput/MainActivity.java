@@ -14,6 +14,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import za.ac.cput.ui.auth.SignUpActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText editEmail, editPassword;
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         // ✅ Make sure textRegister exists in your activity_main.xml
         TextView registerText = findViewById(R.id.textRegister);
         registerText.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, za.ac.cput.SignUpActivity.class);
+            Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
             startActivity(intent);
         });
 

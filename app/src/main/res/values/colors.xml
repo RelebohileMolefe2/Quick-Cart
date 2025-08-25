@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="soft_background">#FFF9FB</color>
+    <color name="card_pink">#FFD1DC</color>
+    <color name="card_soft_pink">#FFE4EC</color>
+    <color name="card_light">#FFFFFF</color>
+    <color name="accent_pink">#F06292</color> <!-- stronger pink -->
+    <color name="text_primary">#333333</color>
 </resources>
