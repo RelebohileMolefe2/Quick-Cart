@@ -1,8 +1,10 @@
-package za.ac.cput;
+package za.ac.cput.ui.home;
 
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
+import android.view.MotionEvent;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -11,6 +13,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import za.ac.cput.R;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -36,19 +40,33 @@ public class HomeActivity extends AppCompatActivity {
         setCategoryClick(R.id.profileCategory, "Profile");
         setCategoryClick(R.id.snacksCategory, "Snacks");
     }
-
+    @SuppressLint("ClickableViewAccessibility")
     private void setCategoryClick(int viewId, String categoryName) {
         ImageView category = findViewById(viewId);
         if (category != null) {
-            category.setOnClickListener(v -> {
-                // For now, just show a toast message
-                Toast.makeText(this, categoryName + " clicked", Toast.LENGTH_SHORT).show();
+            category.setOnTouchListener((v, event) -> {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        Animation scaleDown = AnimationUtils.loadAnimation(this, R.anim.scale_down);
+                        v.startAnimation(scaleDown);
+                        return true;
 
-                // Example: If you want to open another activity for Beauty
-                // if (categoryName.equals("Beauty")) {
-                //     startActivity(new Intent(this, BeautyActivity.class));
-                // }
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        Animation scaleUp = AnimationUtils.loadAnimation(this, R.anim.scale_up);
+                        v.startAnimation(scaleUp);
+
+                        v.performClick(); // ✅ Ensures accessibility compliance
+                        return true;
+                }
+                return false;
             });
+
+            category.setOnClickListener(v ->
+                    Toast.makeText(this, categoryName + " clicked", Toast.LENGTH_SHORT).show()
+            );
         }
     }
+
+
 }

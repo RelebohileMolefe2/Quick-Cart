@@ -1,4 +1,4 @@
-package za.ac.cput;
+package za.ac.cput.ui.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +19,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import za.ac.cput.MainActivity;
+import za.ac.cput.R;
 
 import java.io.IOException;
 
